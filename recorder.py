@@ -7,18 +7,18 @@ def get_date():
     return datetime.now(pytz.timezone("Europe/Moscow")).strftime("%D").replace("/", ".")
 
 
-def create_file():
-    path = f"records/{get_date()}.log"
-    num = 2
-    while os.path.exists(path):
-        path = f"records/{get_date()}_{num}.log"
-        num += 1
-    open(path, "w", encoding="utf8")
-    return path
-
-
 def get_time():
     return datetime.now(pytz.timezone("Europe/Moscow")).strftime("%H:%M:%S")
+
+
+def create_file():
+    _path = f"records/{get_date()}.log"
+    num = 2
+    while os.path.exists(_path):
+        _path = f"records/{get_date()}_{num}.log"
+        num += 1
+    open(_path, "w", encoding="utf8")
+    return _path
 
 
 def record_message(msg):

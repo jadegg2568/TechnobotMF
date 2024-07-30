@@ -154,13 +154,13 @@ def error(msg):
     print("Mineflayer-Бот аварийно завершил свою работу.")
 
 
-bot = MineflayerBot()
-autochat_data = dict()
-
-
 def main():
     t = threading.Thread(target=console_handler)
     t.start()
+
+
+bot = MineflayerBot()
+autochat_data = dict()
 
 
 if __name__ == "__main__":
